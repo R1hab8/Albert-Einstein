@@ -32,7 +32,7 @@ cd script
 touch Rihab.sh
 cd ..
 git add .
-git commit -m "task1 script"
+git commit -m "first task script"
 git push
 clear && history 
 cd /home/devlien/biocomputing && ls
