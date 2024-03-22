@@ -17,4 +17,23 @@ grep -v '^>' abaR.fasta | tr -cd 'tT' | wc -c
 grep -v '>' abaR.fasta | tr -d '\n' | awk -v FS="" '{ for (i=1; i<=NF; i++) { if ($i ~ /[GCgc]/) gc++ } } END { printf "%.2f%%\n", (gc/NF)*100 }'
 touch Rihab.fasta
 grep -v '>' abaR.fasta | tr -d '\n' | grep -o . | sort | uniq -c >> Rihab.fasta
+cd ..
+git clone https://github.com/R1hab8/Albert-Einstein.git Albert
+cd Albert/
+mkdir output
+cp /home/devlien/Rihab/Rihab.fasta /home/devlien/Albert/output
+cd ..
+git add .
+git commit -m "First task output"
+git remote set-url origin <token>
+git push
+mkdir script
+cd script
+touch Rihab.sh
+cd ..
+git add .
+git commit -m "task1 script"
+git push
+clear && history 
+cd /home/devlien/biocomputing && ls
 
